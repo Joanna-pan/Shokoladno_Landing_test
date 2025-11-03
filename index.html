@@ -336,8 +336,92 @@
             font-weight: bold;
             font-size: 20px;
         }
+                /* --- 4. Секция "Отзывы" --- */
+        #reviews {
+            background-color: #F5E6D8;
+            padding: 100px 0;
+        }
+
+        .reviews-carousel {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .review-slide {
+            display: none;
+            animation: fadeIn 0.5s ease-in;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(91, 48, 25, 0.1);
+            text-align: center;
+        }
+
+        .review-slide.active {
+            display: block;
+        }
+
+     .review-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 20px;
+    border: 3px solid var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.review-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+        .review-text {
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .review-author {
+            font-weight: 600;
+            color: var(--secondary-color);
+            font-size: 16px;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .dot.active {
+            background-color: var(--secondary-color);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
         
-        /* --- 4. Футер --- */
+        /* --- 5. Футер --- */
         .main-footer {
             padding: 80px 0;
             background-image: linear-gradient(to top, #3A0E08, #5B3019);
@@ -551,9 +635,10 @@
     <header class="main-header" id="mainHeader">
         <div class="nav-container">
             <nav class="main-nav">
-                <ul>
+                                <ul>
                     <li><a href="#catalog">Каталог</a></li>
                     <li><a href="#about">О Нас</a></li>
+                    <li><a href="#reviews">Отзывы</a></li>
                     <li><a href="#contacts">Контакты</a></li>
                 </ul>
             </nav>
@@ -633,8 +718,58 @@
             </div>
         </section>
     </main>
+            </section>
 
-    <!-- 4. Футер -->
+        <!-- 4. Секция "Отзывы" -->
+        <section id="reviews">
+            <div class="container">
+                <h2>Отзывы наших покупателей</h2>
+                <div class="reviews-carousel">
+                    <div class="review-slide">
+                        <div class="review-avatar">
+                            <img src="img/review-avatar-1.jpg.png" alt="Анна">
+                        </div>
+                        <div class="review-content">
+                            <p class="review-text">"Заказала набор трюфелей на подарок. Осталась в восторге и я, и именинница! Шоколад просто божественный, нежный, тает во рту. Никогда не пробовала ничего подобного! Обязательно буду заказывать еще."</p>
+                            <p class="review-author">Анна, 28 лет</p>
+                        </div>
+                    </div>
+                    <div class="review-slide">
+                        <div class="review-avatar">
+                            <img src="img/review-avatar-2.jpg.png" alt="Михаил">
+                        </div>
+                        <div class="review-content">
+                            <p class="review-text">"Как человек, следящий за питанием, оценил что шоколад без сахара. Вкус насыщенный, настоящий. Плитка с морской солью - это нечто! Заказываю регулярно, доставка всегда вовремя."</p>
+                            <p class="review-author">Михаил, 35 лет</p>
+                        </div>
+                    </div>
+                    <div class="review-slide">
+                        <div class="review-avatar">
+                            <img src="img/review-avatar-3.jpg.jpg" alt="Екатерина">
+                        </div>
+                        <div class="review-content">
+                            <p class="review-text">"Покупала корпусные конфеты для семейного праздника. Все гости были в восторге! Начинка не приторная, шоколад качественный. Отдельное спасибо за красивую упаковку - выглядело как дорогой ресторанный десерт."</p>
+                            <p class="review-author">Екатерина, 42 года</p>
+                        </div>
+                    </div>
+                    <div class="review-slide">
+                        <div class="review-avatar">
+                            <img src="img/avatar-review-4.jpg.png" alt="Дмитрий">
+                        </div>
+                        <div class="review-content">
+                            <p class="review-text">"Батончики беру с собой в поездки - отличный перекус без чувства тяжести. Порадовало, что состав чистый, без лишних добавок. Поработайте над линейкой спортивных батончиков - будет точно хитом!"</p>
+                            <p class="review-author">Дмитрий, 31 год</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-dots"></div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- 5. Футер -->
     <footer id="contacts" class="main-footer">
         <div class="container footer-container">
             <!-- Левая часть -->
@@ -667,6 +802,7 @@
                         <li><a href="#home">Главная</a></li>
                         <li><a href="#catalog">Каталог</a></li>
                         <li><a href="#about">О Нас</a></li>
+                        <li><a href="#reviews">Отзывы</a></li>
                         <li><a href="#contacts">Контакты</a></li>
                     </ul>
                 </nav>
@@ -696,6 +832,39 @@
             } else {
                 header.classList.remove('scrolled');
             }
+        });
+                // Карусель отзывов
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.review-slide');
+            const dotsContainer = document.querySelector('.carousel-dots');
+            let currentSlide = 0;
+
+            // Создаем точки для навигации
+            slides.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.classList.add('dot');
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => showSlide(index));
+                dotsContainer.appendChild(dot);
+            });
+
+            const dots = document.querySelectorAll('.dot');
+
+            function showSlide(n) {
+                slides[currentSlide].classList.remove('active');
+                dots[currentSlide].classList.remove('active');
+                
+                currentSlide = n;
+                
+                slides[currentSlide].classList.add('active');
+                dots[currentSlide].classList.add('active');
+            }
+
+            // Автопереключение слайдов каждые 5 секунд
+            setInterval(() => {
+                let nextSlide = (currentSlide + 1) % slides.length;
+                showSlide(nextSlide);
+            }, 5000);
         });
     </script>
 
