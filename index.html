@@ -140,15 +140,14 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            display: flex;
-            align-items: flex-end; /* Выравнивание по нижнему краю */
             padding: 0;
             position: relative;
         }
 
         .home-content {
-            padding-left: 120px;
-            padding-bottom: 320px; /* Отступ снизу для кнопок */
+            position: absolute;
+            top: 500px;
+            left: 120px;
             display: flex;
             gap: 60px;
         }
@@ -178,6 +177,17 @@
             border: 2px solid var(--secondary-color);
             color: var(--secondary-color);
             transform: scale(1.05);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--secondary-color);
+            color: var(--secondary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--secondary-color);
+            color: var(--text-light);
         }
         /* --- Стили для текста на главной --- */
 .home-text-wrapper {
@@ -596,9 +606,9 @@
             }
 
             .home-content {
+                top: 50vh;
+                left: 20px;
                 flex-direction: column;
-                padding-left: 20px;
-                padding-bottom: 80px;
                 gap: 20px;
                 align-items: flex-start;
             }
@@ -654,7 +664,7 @@
             </div>
             <div class="home-content">
                 <a href="#catalog" class="btn home-btn">В Каталог</a>
-                <a href="#about" class="btn home-btn">Подробнее</a>
+                <a href="#about" class="btn home-btn btn-outline">Подробнее</a>
             </div>
         </section>
 
